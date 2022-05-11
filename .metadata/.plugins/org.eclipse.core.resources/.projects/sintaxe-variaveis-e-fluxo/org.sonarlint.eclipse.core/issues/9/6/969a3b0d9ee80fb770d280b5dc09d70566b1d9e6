@@ -1,0 +1,10 @@
+
+\
+java:S1481	"*Remove this unused "idade" local variable.(‘¬Ì­8ñ´¬ýŠ0H
+RMINORZ
+CODE_SMELL
+m	java:S125"<This block of commented-out lines of code should be removed.(”è”ž8ñ´¬ýŠ0H	RMAJORZ
+CODE_SMELL
+E
+java:S1220""Move this file to a named package.HRMINORZ
+CODE_SMELL
