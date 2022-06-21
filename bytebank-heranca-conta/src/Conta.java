@@ -1,14 +1,16 @@
 
 
-public class Conta {
+public abstract class Conta {
 	
-	private double saldo;
+	protected double saldo;
     private Integer agencia;
     private Integer numero;
 	private Cliente titular;
     private static int total;
     		//static serve para unificar o total de contas
     		// ele vira da classe Conta;
+    
+   
     
     public Conta(int agencia, int numero) {
     	Conta.total++;
@@ -58,9 +60,7 @@ public class Conta {
 		return Conta.total;
 	}
 
-	public void deposita(double valor) {
-		this.saldo += valor;
-	}
+	public abstract void deposita(double valor);
 
 	public boolean saca(double valor) {
 		if (this.saldo >= valor) {
@@ -72,8 +72,7 @@ public class Conta {
 	}
 
 	public boolean transfere(double valor, Conta destino) {
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
+		if (this.saca(valor)) {
 			destino.deposita(valor);
 			return true;
 		}
