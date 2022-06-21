@@ -1,10 +1,10 @@
 // herda os atributos do Funcionario
 public class Gerente extends Funcionario implements Autenticavel {
 
-	private int senha;
+	private AutencacaoUtil autenticador;
 
 	public Gerente() {
-		super();
+		this.autenticador = new AutencacaoUtil();
 	}
 
 	public double getBonificacao() {
@@ -14,15 +14,13 @@ public class Gerente extends Funcionario implements Autenticavel {
 
 	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
+		this.autenticador.autentica(senha);
 	}
 
 	@Override
 	public boolean autentica(int senha) {
-		if (this.senha == senha) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.autenticador.autentica(senha);
 	}
+
+	
 }
