@@ -1,6 +1,6 @@
-public class Fluxo {
+public class FluxoComErro {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		System.out.println("Ini do main");
 		try { // try pega a a linha do erro
 			metodo1(); // ex = definir uma variavel
@@ -18,12 +18,10 @@ public class Fluxo {
 		System.out.println("Fim do metodo1");
 	}
 
-	private static void metodo2() throws MinhaException{
-		System.out.println("Ini do metodo2");
-		
-		throw new MinhaException("deu ruim");
-		
-		//System.out.println("Fim do metodo2");
+	private static void metodo2() {
+		System.out.println("Chamando metodo2");
+		metodo2();
+		System.out.println("Fim do metodo2");
 
 	}
 }
